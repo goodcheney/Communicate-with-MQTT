@@ -1,0 +1,14 @@
+#!/bin/sh
+
+
+USER="dragino"
+MQTT_API="UZ4NGHKJMKS9WR5E"
+CHANNEL_ID="399171"
+CHANNEL_WRITE_API="A4NNF6G8G63JOIUV"
+CLIENT="dragino_Client"    
+
+data1=$1
+data2=$2
+
+
+mosquitto_pub -h mqtt.thingspeak.com -p 1883 -u $USER -P $MQTT_PASSWORD  -i $CLIENT -t channels/$CHANNEL_ID/publish/$CHANNEL_WRITE_API -m "field1=$data1&field2=$data2&status=MQTTPUBLISH"
